@@ -17,9 +17,7 @@ import java.util.Set;
 @WebFilter(filterName = "DemoFilterOne", urlPatterns = "/*", initParams = {@WebInitParam(name = "exclusionUrl", value = "/bbb,/ccc")})
 public class DemoFilter implements Filter {
 
-
     private Set<String> exclusionUrl;
-
 
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
