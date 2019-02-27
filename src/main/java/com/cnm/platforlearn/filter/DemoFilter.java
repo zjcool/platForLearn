@@ -17,6 +17,7 @@ import java.util.Set;
 @WebFilter(filterName = "DemoFilterOne", urlPatterns = "/*", initParams = {@WebInitParam(name = "exclusionUrl", value = "/bbb,/ccc")})
 public class DemoFilter implements Filter {
 
+
     private Set<String> exclusionUrl;
 
 
@@ -34,6 +35,7 @@ public class DemoFilter implements Filter {
         }
         System.out.println("i'm filterone!");
         chain.doFilter(request, response);
+        System.out.println("i'm back");
     }
 
     @Override
