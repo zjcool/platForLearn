@@ -1,5 +1,6 @@
 package com.cnm.platforlearn.pojo;
 
+import com.cnm.platforlearn.constant.ErrNoEnum;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -8,7 +9,16 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class ResultVo {
-     private String errno;
+    private String errno;
 
-     private BaseResult data;
+    private String msg;
+
+    private BaseResult data;
+
+
+    public ResultVo(ErrNoEnum e, BaseResult data) {
+        this.errno = e.getError();
+        this.msg = e.getMsg();
+        this.data = data;
+    }
 }

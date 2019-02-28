@@ -11,9 +11,9 @@ import org.springframework.web.bind.annotation.RestController;
 public class CommonController {
 
     @RequestMapping("/**")
-    public ResultVo test(@RequestBody String body){
-        ResultVo resultVo = new ResultVo(ErrNoEnum.SUCCESS.getError(),new TestResult("zhangsan"));
+    public ResultVo test(@RequestBody String body) {
         System.out.println("========hello Spring===========");
-        return  resultVo;
+
+        return new ResultVo(ErrNoEnum.SUCCESS, new TestResult("zhangsan"));
     }
 }
